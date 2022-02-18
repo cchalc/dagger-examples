@@ -1,0 +1,40 @@
+name: CloudRun
+
+on:
+  workflow_dispatch:
+
+env:
+  PROJECT_ID: ${{ secrets.GCP_PROJECT }}
+  RUN_REGION: us-west1
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - 
+        name: Checkout code
+        uses: actions/checkout@v2
+      -
+        name: Install Dagger
+        uses: dagger/dagger-action@v1
+        with:
+          install-only: true
+      - 
+        name: Show Dagger version
+        run: dagger version
+      - 
+        name: Configure Dagger/GCP
+        run: |
+          dagger init
+          dagger new 'gcpcloudrun' -p ./todoapp/gcpcloudrun
+          dagger input text deploy.name todoapp -e gcpcloudrun
+          dagger input text imageRef gcr.io/$PROJECT_ID/todoapp -e gcpcloudrun
+          dagger input text gcpConfig.region $RUN_REGION -e gcpcloudrun
+          dagger input text gcpConfig.project $PROJECT_ID -e gcpcloudrun
+          dagger input secret gcpConfig.serviceKey ${{ secrets.GCP_SA_KEY }}
+      - 
+        name: Dagger
+        uses: dagger/dagger-action@v1
+        with:
+          age-key: ${{ secrets.DAGGER_AGE_KEY }}
+          args: up -e gcpcloudrun
