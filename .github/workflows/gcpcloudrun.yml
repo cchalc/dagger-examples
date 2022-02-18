@@ -20,5 +20,4 @@ jobs:
         uses: dagger/dagger-action@v1
         with:
           age-key: ${{ secrets.DAGGER_AGE_KEY }}
-          args: input dir src ./todoapp -e gcpcloudrun
           args: up -e gcpcloudrun
