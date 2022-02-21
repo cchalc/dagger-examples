@@ -9,9 +9,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - 
+        name: Checkout code
         uses: actions/checkout@v2
-      - name: Dagger
+      - 
+        name: Dagger
         uses: dagger/dagger-action@v1
         with:
           age-key: ${{ secrets.DAGGER_AGE_KEY }}
