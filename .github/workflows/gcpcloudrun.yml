@@ -25,7 +25,7 @@ jobs:
         run: |
           dagger init
           #dagger mkdir -p ./gcpcloudrun #directory already exists in checkout
-          dagger new gcpcloudrun -p ./gcpcloudrun
+          dagger new gcpcloudrun -p ./todoapp/gcpcloudrun
         
           #      - name: Pass PR number to Dagger
           #        run: dagger input text prID ${{github.event.number}} -e gcpcloudrun
