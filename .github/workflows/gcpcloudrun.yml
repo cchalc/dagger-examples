@@ -13,8 +13,31 @@ jobs:
         name: Checkout code
         uses: actions/checkout@v2
       - 
-        name: Dagger
+        name: Install Dagger
         uses: dagger/dagger-action@v1
         with:
-          age-key: ${{ secrets.DAGGER_AGE_KEY }}
-          args: up -e gcpcloudrun
+          install-only: true
+
+      - name: Show Dagger version
+        run: dagger version
+        
+      - name: Setup dagger environment "gcpcloudrun"
+        run: |
+          dagger init
+          #dagger mkdir -p ./gcpcloudrun #directory already exists in checkout
+          dagger new gcpcloudrun -p ./gcpcloudrun
+        
+          #      - name: Pass PR number to Dagger
+          #        run: dagger input text prID ${{github.event.number}} -e gcpcloudrun
+        
+      - name: List Dagger inputs
+        run: dagger input list -e gcpcloudrun
+        
+      - name: List Dagger outputs
+        run: dagger output list -e gcpcloudrun
+          #      - 
+          #        name: Dagger
+          #        uses: dagger/dagger-action@v1
+          #        with:
+          #          age-key: ${{ secrets.DAGGER_AGE_KEY }}
+          #          args: up -e gcpcloudrun
