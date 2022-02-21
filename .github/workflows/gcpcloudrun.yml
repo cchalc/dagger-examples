@@ -35,9 +35,9 @@ jobs:
         
       - name: List Dagger outputs
         run: dagger output list -e gcpcloudrun
-          #      - 
-          #        name: Dagger
-          #        uses: dagger/dagger-action@v1
-          #        with:
-          #          age-key: ${{ secrets.DAGGER_AGE_KEY }}
-          #          args: up -e gcpcloudrun
+      - 
+        name: Build with AGE KEY
+        uses: dagger/dagger-action@v1
+        with:
+          age-key: ${{ secrets.DAGGER_AGE_KEY }}
+          args: up -e gcpcloudrun
