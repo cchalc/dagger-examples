@@ -1,0 +1,9 @@
+{
+  "push": {
+    "digest": "sha256:5e4c3253bcaf92093a676773d404cd750de6c04fb72dd21829b7a5015f02e9be",
+    "ref": "localhost:5042/todoapp:latest@sha256:5e4c3253bcaf92093a676773d404cd750de6c04fb72dd21829b7a5015f02e9be"
+  },
+  "run": {
+    "ref": "localhost:5042/todoapp:latest@sha256:5e4c3253bcaf92093a676773d404cd750de6c04fb72dd21829b7a5015f02e9be"
+  }
+}

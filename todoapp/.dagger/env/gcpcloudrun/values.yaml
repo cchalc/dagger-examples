@@ -1,0 +1,37 @@
+plan:
+    package: ./gcpcloudrun
+name: gcpcloudrun
+inputs:
+    deploy.name:
+        text: todoapp
+    gcpConfig.project:
+        text: cchalc-sandbox
+    gcpConfig.region:
+        text: us-west1
+    gcpConfig.serviceKey:
+        secret: ENC[AES256_GCM,data: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,iv:r73ThtwazYIiObghsis0yVtKiHGTqq8+mjxZ3zr5iSI=,tag:pcWdjBIFCLDxSBqn2AHg2Q==,type:str]
+    imageRef:
+        text: gcr.io/cchalc-sandbox/todoapp
+    src:
+        dir:
+            path: .
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age16t6432s9l8l9t2pgvvzzmpt7flmjj9uj4nc90cxqvrarq84f097spqce96
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBqVUxMTy9vcnc4Y2ljNXZG
+            SkhoZm1JQUdtQWl6ZW1JN0FpRDdDSWZrRnd3CmJtMmQ2TUl4MmVLZlp4K0wrMHVF
+            WENDU0dMemI4bEFGZHByRzFKRkJNV1EKLS0tIDUrb3BKZzZMTWNIYmM5MHZrMkIr
+            RnF2Sno2YkgwNm9mM2lBZFN5WWMxekUKW7FtHqP+gKcw/KQjTBdgxeVfs8cmDGda
+            QtwYF48VzsjE/vj0UIPzZ4cSBhW/4+LeTeURBCoeieUhqXrA+nXM1w==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2022-02-18T07:32:05Z"
+    mac: ENC[AES256_GCM,data:Qly7urrxpxWr03ozFG5o6gYSq7jTmCOHaIUhM5/IJEvug0Tv8iKS6DAJlGHri6L01NcywJ3EshCF+ooLTGLzNF6QYHwX/JVk+nQOZ3d7qqaZDQhyQs3gBF2ix+qRIi40hlZcpGaRtJd1UueEU4/miT6kKNGM2P6Fr6/hWDvEHGs=,iv:d04Up/QjK5mGa7md/wx62LPIZUgTUQS7cVHLsBKPI0A=,tag:yIfbDr553XVSTovtOe6ODw==,type:str]
+    pgp: []
+    encrypted_suffix: secret
+    version: 3.7.1
